@@ -36,7 +36,7 @@ The current version was built for Twitter Bootstrap 2.3.2 but it will probably w
 ## Usage
 Dialogs can be added to the current request or the next page load.
 
-#### Current request a dialogs
+#### Current page a dialogs
 You can set a dialog for the current page load. To choose what the content of the dialog should be you will have to set one of *template*, *templateUrl*, or *content*. 
 
 * **template**: a view within View/Dialogs/ directory. You can pass parameters to it via the *params* property.
@@ -60,11 +60,12 @@ Here is the full list of parameters you can pass to the dialog:
 		'hideXButton' => false,			// optional, default false, whether to hide the X (close) button of the modal
 	))
 
-#### Next page load dialogs
+#### Next page dialogs
 Dialogs can also be queued for the next page load which is useful if you are going to redirect. Use this command in that case:
 
 	$this->Dialog->setDialogForNextReload(…);
-	
+
+#### Postponing dialogs
 Queued dialogs can be postponed for the next page load with *$this->Dialog->supressDialog()*. This is useful if you have implemented a wizzerd register flow and you need to show a dialog after a the last step. Thus, you will *supress* the dialog during the registration steps and show it only after the user is fully registered.
 
 	$this->Dialog->suppressDialog();
